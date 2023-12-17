@@ -1,7 +1,7 @@
 {
     "name": "JetpacksCarryBigItems",
-    "version_number": "1.0.0",
+    "version_number": "1.0.1",
     "website_url": "https://github.com/Hamunii/JetpacksCarryBigItems",
-    "description": "A lethal company mod which allows the use of the jetpack while holding a two handed item.",
-    "dependencies": []
+    "description": "Allows the use of the jetpack while holding a two handed item.",
+    "dependencies": ["BepInEx-BepInExPack-5.4.2100"]
 }

@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>JetpacksCarryBigItems</AssemblyName>
     <Description>A lethal company mod which allows the use of the jetpack while holding a two handed item.</Description>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <Company>Hamunii</Company>
