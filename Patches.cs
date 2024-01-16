@@ -1,6 +1,7 @@
 ﻿using GameNetcodeStuff;
 using HarmonyLib;
 using System;
+using UnityEngine;
 
 namespace JetpacksCarryBigItems {
     class Patches {
@@ -16,7 +17,7 @@ namespace JetpacksCarryBigItems {
                     playerHasTwoHandedItemInInventoryButIsCurrentlyOnJetpackItem = false;
                     SwitchItemSlots(twoHandedItemIdx, ref __instance);
                 }
-                else if(__instance.currentlyHeldObjectServer.itemProperties.twoHanded){
+                else if(__instance.currentlyHeldObjectServer != null && __instance.currentlyHeldObjectServer.itemProperties.twoHanded){
                     twoHandedItemIdx = __instance.currentItemSlot;
                     int idx = 0;
                     foreach (var item_ in __instance.ItemSlots){
@@ -50,7 +51,14 @@ namespace JetpacksCarryBigItems {
                     distance += requestedSlotIsLowerThanCurrent ? -1 : 1;
                 }
             }
+
+            ShipBuildModeManager.Instance.CancelBuildMode();
+            __instance.playerBodyAnimator.SetBool("GrabValidated", false);
+
             __instance.SwitchToItemSlot(destination);
+
+            __instance.currentlyHeldObjectServer.gameObject.GetComponent<AudioSource>()
+                .PlayOneShot(__instance.currentlyHeldObjectServer.itemProperties.grabSFX, 0.6f);
             return;
         }
 

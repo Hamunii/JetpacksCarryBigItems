@@ -1,6 +1,6 @@
 {
     "name": "JetpacksCarryBigItems",
-    "version_number": "1.0.1",
+    "version_number": "1.0.2",
     "website_url": "https://github.com/Hamunii/JetpacksCarryBigItems",
     "description": "Allows the use of the jetpack while holding a two handed item.",
     "dependencies": ["BepInEx-BepInExPack-5.4.2100"]
